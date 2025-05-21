@@ -1,15 +1,18 @@
+/* Reset de estilos para garantir um comportamento previsível dos elementos */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Estilização do corpo da página com fonte padrão e cores neutras */
 body {
   font-family: Arial, sans-serif;
   background-color: #fff;
   color: #000;
 }
 
+/* Cabeçalho com fundo colorido e texto centralizado */
 header {
   background-color: #2b9a91;
   padding: 20px;
@@ -17,20 +20,22 @@ header {
   color: white;
 }
 
+/* Barra de navegação fixa no topo, flexível e com prioridade de exibição */
 .navbar {
   background-color: #555;
   padding: 10px;
-  position: sticky;
+  position: sticky; /* Mantém a navbar visível ao rolar a página */
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000; /* Garante que a navbar fique sobre outros elementos */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* Botão para alternar o menu em telas menores */
 .menu-toggle {
-  display: none;
+  display: none; /* Inicialmente escondido para desktops */
   background: none;
   border: none;
   font-size: 24px;
@@ -38,12 +43,14 @@ header {
   cursor: pointer;
 }
 
+/* Estilização do menu de navegação com espaçamento entre itens */
 .menu {
   display: flex;
   gap: 15px;
   align-items: center;
 }
 
+/* Links do menu com aparência limpa e efeito de transição */
 .menu a,
 .menu #dark-mode-toggle {
   padding: 8px 15px;
@@ -53,38 +60,44 @@ header {
   background: none;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s; /* Suaviza a mudança de cor */
 }
 
+/* Efeito de hover para melhorar a usabilidade */
 .menu a:hover,
 .menu #dark-mode-toggle:hover {
   background-color: #ded6d6;
   color: black;
 }
 
+/* Container principal com flexibilidade para organizar os elementos */
 .container {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
 }
 
+/* Barra lateral com fundo diferenciado */
 .sidebar {
   flex: 30%;
   background-color: #f1f1f1;
   padding: 20px;
 }
 
+/* Conteúdo principal ocupando mais espaço */
 .main {
   flex: 70%;
   padding: 20px;
 }
 
+/* Caixa de conteúdo com margem inferior para organização */
 .box {
   background-color: #ddd;
   padding: 20px;
   margin-bottom: 20px;
 }
 
+/* Placeholder para imagens, garantindo que fiquem bem posicionadas */
 .image-placeholder {
   width: 100%;
   max-width: 300px;
@@ -98,6 +111,7 @@ header {
   margin-bottom: 15px;
 }
 
+/* Imagens dentro do placeholder ajustadas corretamente */
 .image-placeholder img {
   width: 100%;
   height: auto;
@@ -105,6 +119,7 @@ header {
   border-radius: 5px;
 }
 
+/* Rodapé com estilo reforçado */
 footer {
   background-color: #ddd;
   text-align: center;
@@ -112,11 +127,13 @@ footer {
   font-weight: bolder;
 }
 
+/* Estilização do modo escuro */
 body.dark-mode {
   background-color: #222;
   color: white;
 }
 
+/* Cores adaptadas para o modo escuro */
 .dark-mode header {
   background-color: #1a6460;
 }
@@ -130,12 +147,14 @@ body.dark-mode {
   color: white;
 }
 
+/* Hover ajustado para modo escuro */
 .dark-mode .menu a:hover,
 .dark-mode .menu #dark-mode-toggle:hover {
   background-color: #999;
   color: #000;
 }
 
+/* Ajustes na sidebar e conteúdo principal para modo escuro */
 .dark-mode .sidebar {
   background-color: #2e2e2e;
   color: white;
@@ -150,6 +169,7 @@ body.dark-mode {
   color: white;
 }
 
+/* Rodapé e imagem no modo escuro */
 .dark-mode footer {
   background-color: #444;
   color: white;
@@ -159,6 +179,7 @@ body.dark-mode {
   background-color: #666;
 }
 
+/* Media query para tornar o layout responsivo */
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -170,10 +191,12 @@ body.dark-mode {
     left: 0;
   }
 
+  /* Exibe o menu quando a navbar recebe a classe 'show-menu' */
   .navbar.show-menu .menu {
     display: flex;
   }
 
+  /* Ajusta os itens do menu para ocuparem toda a largura */
   .menu a,
   .menu #dark-mode-toggle {
     padding: 12px;
@@ -182,6 +205,7 @@ body.dark-mode {
     width: 100%;
   }
 
+  /* Mostra o botão de alternância apenas em telas pequenas */
   .menu-toggle {
     display: block;
   }
